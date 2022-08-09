@@ -1,0 +1,406 @@
+/* The page is NOT responsive. You can implement responsiveness yourself if you wanna have some fun 😃 */
+
+:root {
+  --color-primary: #5ec576;
+  --color-secondary: #ffcb03;
+  --color-tertiary: #ff585f;
+  --color-primary-darker: #4bbb7d;
+  --color-secondary-darker: #ffbb00;
+  --color-tertiary-darker: #fd424b;
+  --color-primary-opacity: #5ec5763a;
+  --color-secondary-opacity: #ffcd0331;
+  --color-tertiary-opacity: #ff58602d;
+  --gradient-primary: linear-gradient(to top left, #39b385, #9be15d);
+  --gradient-secondary: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  color: #444;
+  line-height: 1.9;
+  background-color: #f3f3f3;
+}
+section {
+  padding: 20rem 20rem;
+  border-bottom: 1px solid rgba(50,50,50, 0.4);
+}
+button {
+  border: none;
+  background-color: #f3f3f3;
+}
+button:hover {
+  outline: none;
+  cursor: pointer;
+}
+
+/* header */
+header > *:not(:first-child) {
+  opacity: 0.75;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 7rem;
+  padding-top: 2rem;
+}
+
+#navLogo {
+  padding-left: 7rem;
+}
+#navLogo img {
+  height: 100%;
+  width: auto;
+}
+#navButtons {
+  padding-right: 7rem;
+  display: flex;
+  align-items: center;
+}
+#navButtons button {
+  font-size: 2rem;
+  transition: all 0.3s;
+}
+#navButtons button:not(:last-child){
+  padding-right: 3.5rem;
+}
+#navButtons button:hover{
+  opacity: 0.5;
+}
+#navOpenAccount {
+  background-color: rgba(24, 168, 36, 0.9);
+  border-radius: 2.5rem;
+  padding: 1.2rem;
+}
+/* section 1 */
+#section1 {
+  display: flex;
+}
+#companyDesc {
+  width: 60%;
+}
+#companyDescPrettyText {
+  font-size: 5rem;
+  font-weight: 700;
+}
+#companyDescPrettyText span {
+  position: relative;
+}
+#companyDescPrettyText span::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: linear-gradient(to left, lime, green);
+  transform: skewX(-10deg) scale(1.07, 1.5);
+  opacity: 0.5;
+}
+#multipleImages {
+  width: 40%;
+}
+#companyDesc h1 {
+  font-size: 2.5rem;
+  margin-top: 2.5rem;
+}
+#companyDesc button {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  color: limegreen;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid limegreen;
+  font-family: 'Poppins', sans-serif;
+}
+#multipleImages img{
+  width: 100%;
+  height: auto;
+}
+#multipleImages {
+  padding-left: 2rem;
+}
+
+/* section 2 */
+
+.sectionlabel {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+.sectionlabel > h2{
+  color: #39b385;
+  font-size: 2rem;
+  width: 100%;
+}
+.sectionlabel > h1{
+  font-size: 4rem;
+}
+.section2infocont {
+  display: flex;
+  justify-content: space-between;
+}
+.section2infocont:not(:last-child){
+  margin: 20rem 0;
+}
+.infocontimage {
+  width: 50%;
+}
+.infocontimage img{
+  width: 100%;
+  height: auto;
+}
+.infoconttext {
+  width: 40%;
+  height: 100%;
+  padding: 5% 0;
+}
+.infoconttext p {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.infoconttext h1 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+.infocontdecdiv {
+  background-color: #4bbb7d;
+  border-radius: 5rem;
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 2rem;
+  opacity: 0.6;
+}
+/* section 3 */
+#operationsCont {
+  position: relative;
+  padding: 7.5rem 5rem 5rem 5rem;
+  background-color: white;
+  margin-top: 10rem;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.operationButtons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15rem;
+  width: 100%;
+  position: absolute;
+  top: calc(0rem - 2.36rem);
+  left: 0;
+}
+.operationsButt {
+  font-size: 1.8rem;
+  background-color: yellow;
+  padding: 1rem 2.5rem;
+  border-radius: 2rem;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  transition: 0.3s;
+}
+
+#instTrans {
+  /* transform: translateY(-0.75rem); */
+  background-color: #ffb003;
+}
+#instLoans {
+  /* transform: translateY(-0.75rem); */
+  background-color: #39b385;
+}
+#instClose {
+  /* transform: translateY(-0.75rem); */
+  background-color: #ff585f;
+}
+#instTrans:hover {
+
+  background-color: #ff8800;
+}
+#instLoans:hover {
+
+  background-color: #21e99c;
+}
+#instClose:hover {
+
+  background-color: #fd2498;
+}
+.operationsTextCont {
+  display: flex;
+}
+#operationsDecDiv {
+  background-color: gold;
+  border-radius: 5rem;
+  width: 7rem;
+  height: 7rem;
+  opacity: 0.4;
+}
+#operationsText {
+  width: 85%;
+  padding-left: 5%;
+}
+#operationsText h1{
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+#operationsText p{
+  font-size: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+/* section 4 */
+
+#section4 {
+  border-bottom: none;
+}
+.scrollBtn {
+  padding: 1.5rem;
+  background-color: white;
+  font-size: 3rem;
+  border-radius: 50%;
+}
+
+#scrollLeft {
+  margin-right: 2.5rem;
+  margin-top: 20rem;
+}
+#scrollRight {
+  margin-left: 2.5rem;
+  margin-top: 20rem;
+}
+#slideCommentsCont {
+  display: flex;
+  margin-top: 7.5rem;
+}
+#slideComment {
+  display: flex;
+}
+#slideComment::before {
+  content: '\201C';
+  color: #4bbb7d;
+  font-size: 20rem;
+  line-height: 1;
+}
+#comment {
+  margin-top: 2rem;
+}
+#comment h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+#comment p {
+  font-size: 1.75rem;
+}
+#pfpAndUser {
+  display: flex;
+  padding-left: 20rem;
+  margin-top: 3rem;
+}
+#pfpAndUser img {
+  width: 7.5rem;
+  height: auto;
+  border-radius: 50%;
+  margin-right: 2.5rem;
+}
+.nameAndLoc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.nameAndLoc p {
+  font-size: 1.5rem;
+  opacity: 0.90;
+  color: gray;
+  padding-bottom: 1rem;
+}
+.nameAndLoc h2 {
+  padding-top: 1rem;
+}
+#smallBtnCont button {
+  padding: 0.5rem;
+  background-color: rgb(182, 182, 182);
+  margin-right: 1.25rem;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+#smallBtnCont button:hover {
+  
+  background-color: grey;
+  
+}
+#smallBtnCont {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+/* last section */
+
+#freeAccount {
+  margin-top: 10rem;
+  padding-top: 10rem;
+  background-color: rgba(55,56,61,255);
+  border-bottom: 1px solid rgba(212, 211, 211, 0.2);
+}
+#freeAccount h1 {
+  font-size: 4rem;
+  padding: 0 4rem;
+  color: white;
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
+}
+#freeAccountBtn {
+  display: block;
+  background-color: rgb(96,196,116);
+  font-size: 2rem;
+  margin: 5rem auto 0 auto;
+  padding: 1.5rem 2rem;
+  border-radius: 5rem;
+  margin-bottom: 10rem;
+  transition: 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+#freeAccountBtn:hover {
+  background-color: rgb(58, 194, 85);
+  transform: scale(1.05);
+}
+footer {
+  background-color: rgba(55,56,61,255);
+  padding-top: 10rem;
+}
+#variousButtons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 35rem;
+}
+#variousButtons button {
+  font-size: 1.8rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}
+#footerIcon {
+  display: block;
+  margin: 7.5rem auto 0 auto;
+  width: 8rem;
+  height: auto;
+}
+#copystrike {
+  margin-top: 5rem;
+  padding-bottom: 5rem;
+  text-align: center;
+  color: rgba(255,255,255, 0.3);
+  font-size: 1.2rem;
+}
+
