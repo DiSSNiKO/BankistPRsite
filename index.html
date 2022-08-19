@@ -19,30 +19,32 @@
         <img src="/img/logo.png" alt="">
       </div>
       <div id="navButtons">
-        <button id="navFeatures">Features</button>
-        <button id="navOperations">Operations</button>
-        <button id="navTestimonials">Testimonials</button>
-        <button id="navOpenAccount">Open account</button>
+        <div class="navHrefs">  
+          <a href="#section2" class="navLink">Features</a>
+          <a href="#section3" class="navLink">Operations</a>
+          <a href="#section4" class="navLink">Testimonials</a>
+        </div>
+        <button id="navOpenAccount" class="openBtn">Open account</button>
       </div>
     </header>
-    <div id="newAccountPopUp">
-      <div id="accountCreation">
-        <button id="closeModal">X</button>
-        <p>Open your bank account in just <span id="faivmins">5 minutes</span></p>
-        <div class="userInfo">
-          <h3>First name</h3>
-          <input type="text">
-        </div>
-        <div class="userInfo">
-          <h3>Last name</h3>
-          <input type="text">
-        </div>
-        <div class="userInfo">
-          <h3>Email address</h3>
-          <input type="text">
-        </div>
-        <button id="nextStep">Next step →</button>
+    <div id="overlay">
+    </div>
+    <div id="accountCreation">
+      <button id="closeModal">X</button>
+      <p>Open your bank account in just <span id="faivmins">5 minutes</span></p>
+      <div class="userInfo">
+        <h3>First name</h3>
+        <input type="text">
       </div>
+      <div class="userInfo">
+        <h3>Last name</h3>
+        <input type="text">
+      </div>
+      <div class="userInfo">
+        <h3>Email address</h3>
+        <input type="text">
+      </div>
+      <button id="nextStep">Next step →</button>
     </div>
     <section id="section1">
       <div id="companyDesc">
@@ -103,9 +105,17 @@
         </div>
         <div class="operationsTextCont">
           <div id="operationsDecDiv"></div>
-          <div id="operationsText">
+          <div class="operationsText">
             <h1>Tranfser money to anyone, instantly! No fees, no BS.</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div class="operationsText">
+            <h1>Loan yourself and your mother money in a blink!</h1>
+            <p>Never gonna give you up, never gonna let you down, never gonna run around and desert you, never gonna make you cry, never gonna say goodbye, never gonna tell a lie and hurt you.</p>
+          </div>
+          <div class="operationsText">
+            <h1>Annihilate your account reasonably fast!</h1>
+            <p>Bakamitai kodomo nanone, ume wo oote kizutsuite, uso ga heta na kuse ni, waraenai egao miseta, I LOVE YOU, mo, roku ni iwanai, kuchibetate honna ni ruki yo, nanoni nanoni dooooshite.</p>
           </div>
         </div>
       </div>
@@ -143,7 +153,7 @@
     </section>
     <div id="freeAccount">
       <h1>The best day to join Bankist was one year ago. The second best is today!</h1>
-      <button id="freeAccountBtn">Open your free account today!</button>
+      <button id="freeAccountBtn" class="openBtn">Open your free account today!</button>
     </div>
     <footer>
       <div id="variousButtons">

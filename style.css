@@ -56,7 +56,9 @@ header {
   height: 7rem;
   padding-top: 2rem;
 }
-
+.navOpacity {
+  opacity: 0.5;
+}
 #navLogo {
   padding-left: 7rem;
 }
@@ -69,38 +71,42 @@ header {
   display: flex;
   align-items: center;
 }
-#navButtons button {
+#navButtons a {
   font-size: 2rem;
   transition: all 0.3s;
-}
-#navButtons button:not(:last-child){
   padding-right: 3.5rem;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
 }
-#navButtons button:hover{
-  opacity: 0.5;
-}
+
 #navOpenAccount {
   background-color: rgba(24, 168, 36, 0.9);
   border-radius: 2.5rem;
   padding: 1.2rem;
+  font-weight: 600;
 }
 /* create account */
-#newAccountPopUp {
+#overlay {
   position: fixed;
-  width: 100vw;
-  height: 100vh;
   top: 0;
   left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.4);
+  transition: all 0.5s;
   display: none;
 }
 #accountCreation {
   background-color:rgb(240, 240, 240);
-  margin: 25vh 35vw 0 35vw;
+  margin: 15vh 32.5vw 0 32.5vw;
   padding: 4rem 5rem;
-  position: relative;
+  position: fixed;
   z-index: 101;
+  transition: all 0.5s;
+  display: none;
 }
 #closeModal {
   position: absolute;
@@ -115,6 +121,7 @@ header {
   font-weight: 600;
   margin-bottom: 2.5rem;
   background-color: rgba(0, 0, 0, 0);
+  text-align: center;
 }
 #faivmins {
   position: relative;
@@ -291,16 +298,16 @@ header {
 }
 
 #instTrans {
-  /* transform: translateY(-0.75rem); */
   background-color: #ffb003;
 }
 #instLoans {
-  /* transform: translateY(-0.75rem); */
   background-color: #39b385;
 }
 #instClose {
-  /* transform: translateY(-0.75rem); */
   background-color: #ff585f;
+}
+.moveBtnUp {
+  transform: translateY(-0.75rem);
 }
 #instTrans:hover {
 
@@ -324,15 +331,15 @@ header {
   height: 7rem;
   opacity: 0.4;
 }
-#operationsText {
+.operationsText {
   width: 85%;
   padding-left: 5%;
 }
-#operationsText h1{
+.operationsText h1{
   font-size: 2.5rem;
   margin-bottom: 2.5rem;
 }
-#operationsText p{
+.operationsText p{
   font-size: 1.75rem;
   margin-bottom: 2.5rem;
 }
