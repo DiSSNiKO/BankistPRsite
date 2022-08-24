@@ -54,13 +54,20 @@ header {
   display: flex;
   justify-content: space-between;
   height: 7rem;
-  padding-top: 2rem;
+  padding: 1rem 0;
+  z-index: 1000;
 }
 .navOpacity {
   opacity: 0.5;
 }
 #navLogo {
   padding-left: 7rem;
+}
+.stickyHead {
+  position: sticky;
+  top:0;
+  left:0;
+  background-color: white;
 }
 #navLogo img {
   height: 100%;
@@ -243,6 +250,9 @@ header {
 .infocontimage {
   width: 50%;
 }
+.lazyImage {
+  filter: blur(20px);
+}
 .infocontimage img{
   width: 100%;
   height: auto;
@@ -349,54 +359,77 @@ header {
   border-bottom: none;
 }
 .scrollBtn {
+  height: 5rem;
   padding: 1.5rem;
   background-color: white;
   font-size: 3rem;
+  font-weight: bold;
   border-radius: 50%;
+  line-height: 50%;
+  z-index: 150;
 }
 
 #scrollLeft {
-  margin-right: 2.5rem;
-  margin-top: 20rem;
+  margin-right: 1rem;
+  margin-top: 30rem;
 }
 #scrollRight {
-  margin-left: 2.5rem;
-  margin-top: 20rem;
+  margin-left: 1rem;
+  margin-top: 30rem;
 }
-#slideCommentsCont {
-  display: flex;
+.slideCommentsCont {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
   margin-top: 7.5rem;
-}
-#slideComment {
+  padding: 0 3rem;
   display: flex;
+  flex-direction: column;
+  transition: 0.5s;
 }
-#slideComment::before {
-  content: '\201C';
-  color: #4bbb7d;
-  font-size: 20rem;
-  line-height: 1;
-}
-#comment {
+
+
+.comment {
   margin-top: 2rem;
 }
-#comment h2 {
+.comment h2 {
   font-size: 2.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   margin-top: 3rem;
 }
-#comment p {
+.comment h2::before {
+  
+  content: '\201C';
+  color: #4bbb7d;
+  font-size: 5rem;
+
+}
+.comment p {
   font-size: 1.75rem;
 }
-#pfpAndUser {
+.pfpAndUser {
   display: flex;
-  padding-left: 20rem;
+  padding-left: 10rem;
   margin-top: 3rem;
 }
-#pfpAndUser img {
+.pfpAndUser img {
   width: 7.5rem;
   height: auto;
   border-radius: 50%;
   margin-right: 2.5rem;
+}
+.commentsAndBtns {
+  display: flex;
+}
+.justComments {
+  max-width: 100rem;
+  width: 100%;
+  height: 50rem;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
 }
 .nameAndLoc {
   display: flex;
@@ -420,9 +453,7 @@ header {
   transition: 0.2s;
 }
 #smallBtnCont button:hover {
-  
   background-color: grey;
-  
 }
 #smallBtnCont {
   display: flex;

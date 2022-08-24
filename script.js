@@ -117,3 +117,94 @@ header.addEventListener('mouseout', function(){
         el.classList.remove('navOpacity');
     }
 })
+//sticky nav
+const headerHeight = header.getBoundingClientRect().height;
+
+const obsCallback = function(entries){
+    if(!entries[0].isIntersecting){
+        header.classList.add('stickyHead');
+    } else {
+        header.classList.remove('stickyHead');
+    }
+};
+
+const obsOptions = {
+    root: null,
+    threshold: 0,
+    rootMargin: `-${headerHeight}px`,
+};
+
+const observer = new IntersectionObserver(obsCallback, obsOptions);
+observer.observe(section1);
+
+//lay-z loading imges
+
+const layzImages = document.querySelectorAll('img[data-src]');
+console.log(layzImages);
+
+const layzCallback = function(entries, observer){
+    const entry = entries[0];
+    if(!entry.isIntersecting){
+        return;
+    }
+    entry.target.src = entry.target.dataset.src;
+    entry.target.addEventListener('load', function(){
+        entry.target.classList.remove('lazyImage');
+    });
+    observer.unobserve(entry.target);
+};
+
+const lazyOptions = {
+    root: null,
+    threshold: 0,
+};
+
+const lazyObserver = new IntersectionObserver(layzCallback, lazyOptions);
+
+layzImages.forEach(img => lazyObserver.observe(img));
+
+//slidy slides
+
+let currentSlide=0;
+
+const slidies = document.querySelectorAll(".slideCommentsCont");
+
+let numOfSlides = slidies.length;
+const scrollLeft = document.querySelector("#scrollLeft");
+const scrollRight = document.querySelector("#scrollRight");
+
+slidies.forEach((slide, i) => (  //Second parameter in forEach is the INDEX
+    slide.style.transform = `translateX(${100*i}%)`
+));
+
+
+function slideleftnright(){
+    let cuindks = 0;
+    let i = currentSlide;
+    let moves = numOfSlides;
+    while(moves>0){
+        slidies[cuindks].style.transform = `translateX(${100*-i}%)`;
+        i--;
+        moves--;
+        cuindks++;
+    }
+};
+
+scrollRight.addEventListener('click', function(){
+    if(!(currentSlide+1>numOfSlides-1)){
+        currentSlide++;
+        slideleftnright();
+    } else {
+        currentSlide = 0;
+        slideleftnright();
+    }
+});
+scrollLeft.addEventListener('click', function(){
+    if(!(currentSlide-1<0)){
+        currentSlide--;
+        slideleftnright();
+    } else {
+        currentSlide = numOfSlides-1;
+        slideleftnright();
+    }
+});
