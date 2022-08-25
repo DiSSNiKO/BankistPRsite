@@ -445,7 +445,7 @@ header {
 .nameAndLoc h2 {
   padding-top: 1rem;
 }
-#smallBtnCont button {
+.smolbtn {
   padding: 0.5rem;
   background-color: rgb(182, 182, 182);
   margin-right: 1.25rem;
@@ -459,6 +459,7 @@ header {
   display: flex;
   justify-content: center;
   margin-top: 3rem;
+
 }
 /* last section */
 

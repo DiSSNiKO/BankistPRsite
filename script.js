@@ -30,6 +30,7 @@ const operationsDecDiv = document.querySelector('#operationsDecDiv');
 //section 4
 const section4 = document.querySelector('#section4');
 const section4cords = section4.getBoundingClientRect();
+const smallBtnCont = document.querySelector("#smallBtnCont");
 
 //Event listeners
 const openBtnMethod = () => {
@@ -169,7 +170,15 @@ let currentSlide=0;
 
 const slidies = document.querySelectorAll(".slideCommentsCont");
 
+let smolbtnhtml = '';
+
+
+
 let numOfSlides = slidies.length;
+for(let i=0; i<numOfSlides; i++){
+    smolbtnhtml+='<button class="smolbtn"></button>\n';
+}
+smallBtnCont.innerHTML=smolbtnhtml;
 const scrollLeft = document.querySelector("#scrollLeft");
 const scrollRight = document.querySelector("#scrollRight");
 
@@ -208,3 +217,13 @@ scrollLeft.addEventListener('click', function(){
         slideleftnright();
     }
 });
+// small btns
+
+const smolbtns = document.querySelectorAll(".smolbtn");
+
+smolbtns.forEach((btn, i)=>(
+    btn.addEventListener('click',function(){
+        currentSlide=i;
+        slideleftnright();
+    })
+));
