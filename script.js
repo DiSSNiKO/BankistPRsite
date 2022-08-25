@@ -166,6 +166,8 @@ layzImages.forEach(img => lazyObserver.observe(img));
 
 //slidy slides
 
+
+
 let currentSlide=0;
 
 const slidies = document.querySelectorAll(".slideCommentsCont");
@@ -176,7 +178,7 @@ let smolbtnhtml = '';
 
 let numOfSlides = slidies.length;
 for(let i=0; i<numOfSlides; i++){
-    smolbtnhtml+='<button class="smolbtn"></button>\n';
+    smolbtnhtml+=`<button class="smolbtn" data-slide="${i}"></button>\n`;
 }
 smallBtnCont.innerHTML=smolbtnhtml;
 const scrollLeft = document.querySelector("#scrollLeft");
@@ -203,27 +205,47 @@ scrollRight.addEventListener('click', function(){
     if(!(currentSlide+1>numOfSlides-1)){
         currentSlide++;
         slideleftnright();
+        activateButton();
     } else {
         currentSlide = 0;
         slideleftnright();
+        activateButton();
     }
 });
 scrollLeft.addEventListener('click', function(){
     if(!(currentSlide-1<0)){
         currentSlide--;
         slideleftnright();
+        activateButton();
     } else {
         currentSlide = numOfSlides-1;
         slideleftnright();
+        activateButton();
     }
 });
 // small btns
 
-const smolbtns = document.querySelectorAll(".smolbtn");
+const smolbtns = document.querySelector("#smallBtnCont");
+activateButton(); //edge case when page first loads
 
-smolbtns.forEach((btn, i)=>(
-    btn.addEventListener('click',function(){
-        currentSlide=i;
+function activateButton(){
+    for(let but of smolbtns.children){
+        but.classList.remove("smolbtnActive");
+        if(Number(but.dataset.slide)===currentSlide){
+            but.classList.add("smolbtnActive");
+        }
+    }
+}
+
+
+smolbtns.addEventListener('click', function(e){
+    const targetz = e.target;
+    if(targetz.classList.contains("smolbtn")){
+        currentSlide = Number(targetz.dataset.slide);
+        console.log(currentSlide)
         slideleftnright();
-    })
-));
+        activateButton();
+    } else {
+        return;
+    }
+});

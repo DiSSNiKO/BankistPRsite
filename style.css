@@ -452,6 +452,9 @@ header {
   border-radius: 50%;
   transition: 0.2s;
 }
+.smolbtnActive {
+  background-color: grey;
+}
 #smallBtnCont button:hover {
   background-color: grey;
 }
