@@ -366,7 +366,7 @@ header {
   font-weight: bold;
   border-radius: 50%;
   line-height: 50%;
-  z-index: 150;
+  z-index: 30;
 }
 
 #scrollLeft {
